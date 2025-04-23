@@ -13,6 +13,13 @@ async function init() {
     app.use(bodyParser.json());
     app.use("/api", router);
 
+    app.get("/", (req, res) => {
+      res.status(200).json({
+        message: "server is running!",
+        data: null,
+      });
+    });
+
     app.listen(PORT, () =>
       console.log(`server is running on http://localhost:${PORT}`)
     );
