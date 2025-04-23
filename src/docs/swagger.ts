@@ -6,7 +6,7 @@ const doc = {
     title: "dokumentasi API MERN-Stack",
     description: "dokumentasi API MERN-Stack",
   },
-  server: [
+  servers: [
     {
       url: "http://localhost:3000/api",
       description: "Local Server",
