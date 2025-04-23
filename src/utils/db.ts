@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 import { DATABASE_URL } from "./env";
 
 async function db() {
-  console.log(DATABASE_URL);
   try {
     await mongoose.connect(DATABASE_URL, {
       dbName: "db-mern",
