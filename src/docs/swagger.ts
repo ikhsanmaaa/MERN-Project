@@ -28,6 +28,9 @@ const doc = {
         identifier: "kucung",
         password: "kucung123",
       },
+      activation: {
+        code: "abcde",
+      },
     },
   },
 };
