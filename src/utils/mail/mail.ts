@@ -10,22 +10,22 @@ import {
 import ejs from "ejs";
 import path from "path";
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.zoho.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: EMAIL_SMTP_USER,
-    pass: EMAIL_SMTP_PASS,
-  },
-});
-
 export interface ISendMail {
   from: string;
   to: string;
   subject: string;
   html: string;
 }
+
+const transporter = nodemailer.createTransport({
+  host: EMAIL_SMTP_HOST,
+  port: EMAIL_SMTP_PORT,
+  secure: EMAIL_SMTP_SECURE,
+  auth: {
+    user: EMAIL_SMTP_USER,
+    pass: EMAIL_SMTP_PASS,
+  },
+});
 
 export const sendMail = async ({ from, to, subject, html }: ISendMail) => {
   const result = await transporter.sendMail({
