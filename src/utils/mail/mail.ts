@@ -15,8 +15,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: process.env.ZOHO_USER,
-    pass: process.env.ZOHO_PASS,
+    user: EMAIL_SMTP_USER,
+    pass: EMAIL_SMTP_PASS,
   },
 });
 
