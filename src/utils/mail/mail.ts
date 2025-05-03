@@ -11,15 +11,13 @@ import ejs from "ejs";
 import path from "path";
 
 const transporter = nodemailer.createTransport({
-  service: EMAIL_SMTP_SERVICE_NAME,
-  host: EMAIL_SMTP_HOST,
-  port: EMAIL_SMTP_PORT,
-  secure: EMAIL_SMTP_SECURE,
+  host: "smtp.zoho.com",
+  port: 587,
+  secure: false,
   auth: {
-    user: EMAIL_SMTP_USER,
-    pass: EMAIL_SMTP_PASS,
+    user: process.env.ZOHO_USER,
+    pass: process.env.ZOHO_PASS,
   },
-  requireTLS: true,
 });
 
 export interface ISendMail {
