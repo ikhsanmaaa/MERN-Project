@@ -1,7 +1,7 @@
 import { IPaginationQuerry, IReqUser } from "../utils/interfaces";
 import { Response } from "express";
-import CategoryModel from "../models/category.models";
-import { categoryDAO } from "../models/category.models";
+import CategoryModel from "../models/category.model";
+import { categoryDAO } from "../models/category.model";
 import response from "../utils/response";
 import { object } from "yup";
 
@@ -81,7 +81,7 @@ export default {
   async remove(req: IReqUser, res: Response) {
     try {
       const { id } = req.params;
-      const result = await CategoryModel.findByIdAndDelete(id);
+      const result = await CategoryModel.findByIdAndDelete(id, { new: true });
 
       response.success(res, result, "success update category");
     } catch (error) {
